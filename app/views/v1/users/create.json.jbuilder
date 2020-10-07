@@ -8,7 +8,7 @@ json.data do
 
          json.authentication_token @user.authentication_token
 
-      json.username @user.username
+        json.username @user.username
 
     end
 
