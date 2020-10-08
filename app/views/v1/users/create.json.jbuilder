@@ -10,6 +10,8 @@ json.data do
 
         json.username @user.username
 
+        json.quick_picks @user.quick_picks
+
     end
 
 end
