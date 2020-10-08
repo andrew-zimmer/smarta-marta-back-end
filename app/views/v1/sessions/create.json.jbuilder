@@ -14,6 +14,8 @@ json.data do
 
             :authentication_token,
 
+            :quick_picks
+
         )
 
     end
