@@ -12,7 +12,8 @@ module V1
 
             else
 
-                head(:unprocessable_entity)
+                render json: {errors: @user.errors.full_messages}
+
 
             end
 

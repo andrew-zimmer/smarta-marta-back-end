@@ -10,7 +10,7 @@ class V1::SessionsController < ApplicationController
 
         else
 
-            head(:unauthorized)
+            render json: {errors: ['Invalid email or password']}
 
         end
 
@@ -20,11 +20,11 @@ class V1::SessionsController < ApplicationController
 
         user = User.find_by(id: params[:id])
 
-user.authentication_token = nil
+            user.authentication_token = nil
 
         if user.save
 
-            head(:ok)
+            render json: :ok
 
         else
 

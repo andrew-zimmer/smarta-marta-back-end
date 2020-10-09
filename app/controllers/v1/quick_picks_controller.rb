@@ -1,5 +1,15 @@
-class QuickPicksController < ApplicationController
+class V1::QuickPicksController < ApplicationController
     before_action :authenticate_user!
+
+    def index
+        @user = User.find_by(email:  params[:user_email])
+        @quick_picks = @user.quick_picks
+        if @user
+            render :index
+        else
+            render json: {errors: ['Error in quick picks create action']}
+        end
+    end
 
     def create
         @quick_pick = QuickPick.new(quick_picks_params)
