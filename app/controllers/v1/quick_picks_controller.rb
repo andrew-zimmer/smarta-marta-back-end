@@ -33,6 +33,7 @@ class V1::QuickPicksController < ApplicationController
         quick_pick = QuickPick.find_by(id: params[:id])
         if quick_pick
             quick_pick.destroy
+            render json: :ok
         else
             head(:unauthorized)
         end
